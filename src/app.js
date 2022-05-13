@@ -4,21 +4,22 @@ let counter = 0;
 //funcion principal del juego
 function juegoDelAhorcado(){
     let salir = false;
-    let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION'];
-    
+    let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION'];
+
     if(counter!=0){
         cleanBoard();
     }
 
     counter++;
+    console.log(counter);
     //funcion que selecciona las palabras de manera aleatoria
     function seleccionarPalabra(arrPalabras){
-        let randPalabra = arrPalabras[Math.floor(Math.random()*arrPalabras.length)];
+        const randPalabra = arrPalabras[Math.floor(Math.random()*arrPalabras.length)];
 
         console.log(randPalabra);
-        const longitud = randPalabra.length;
+        // const longitud = randPalabra.length;
 
-        letrasEnPantalla(longitud);
+        letrasEnPantalla(randPalabra);
         return randPalabra;
     }
 
@@ -29,13 +30,20 @@ function juegoDelAhorcado(){
     window.addEventListener('keypress', function(e){
         const letra = e.key;
         console.log(letra);
+        arrLetras = document.querySelectorAll('.letra');
 
-        for(let i = 0; i<palabra.length;i++){
-            if(letra === palabra[i]){
-                console.log(letra + ' en index ' + i);
-                break;
+        let index = 0;
+        arrLetras.forEach(element => {
+            let guiones = document.querySelectorAll('.guion');
+            if(element.textContent===letra){
+                // element.classList.remove('guion');
+                element.classList.remove('hidden');
+                let guion = guiones[index];
+                guion.classList.add('hidden');
             }
-        }
+            index++;
+        });
+ 
     });
 
     //sale del juego si el usuario presiona 'Terminar Juego'

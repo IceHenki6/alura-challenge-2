@@ -20,7 +20,7 @@ section{
     background-color: wheat;
 }
 
-#display-letras{
+.display-letras{
     display: flex;
     flex-direction: row;
     margin: 20px;
@@ -31,4 +31,11 @@ section{
     width: 10px;
     background-color: black;
     margin: 5px;
+}
+
+.letra{
+    color:black;
+}
+.hidden{
+    display: none;
 }
