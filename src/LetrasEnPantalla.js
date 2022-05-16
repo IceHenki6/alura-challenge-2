@@ -14,7 +14,6 @@ function letrasEnPantalla(word){
         let letra = document.createElement('p');
         letra.textContent = word[i];
 
-        console.log('letra: ' + letra.textContent);
         letra.classList.add('letra');
         letra.classList.add('hidden');
         guion.classList.add('guion');
@@ -26,5 +25,9 @@ function letrasEnPantalla(word){
 
 function cleanBoard(){
     let letras = document.querySelector('.display-letras');
+    let board = document.querySelector('.canvas');
+    ctx = board.getContext('2d');
+    ctx.clearRect(0,0,board.width, board.height);
     letras.remove();
+    window.removeEventListener('keypress',captureLetras);
 }

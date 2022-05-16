@@ -12,29 +12,46 @@ section{
     justify-content: center;
 }
 
-#dibujo{
+#display-juego{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width:50vw;
-    height: 70vh;
+    height: 90vh;
     background-color: wheat;
+    border-radius: 30px;
 }
+
+
+#dibujo{
+    width:800px;
+    height:600px;
+    margin: 10px auto;
+}
+
+/* #canvas{
+    background-color: black;
+    position:absolute;
+} */
 
 .display-letras{
     display: flex;
     flex-direction: row;
-    margin: 20px;
+    width: 30%;
+    height: 5%;
+    margin: 20px auto;
 }
 
 .guion{
     height: 3px;
-    width: 10px;
+    width: 15px;
     background-color: black;
-    margin: 5px;
+    margin: 5px auto;
 }
 
 .letra{
     color:black;
+    margin: 5px auto;
 }
 .hidden{
     display: none;
