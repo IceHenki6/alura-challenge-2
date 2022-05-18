@@ -10,14 +10,10 @@ function dibujarBase(){
     ctx.strokeStyle = '#8a5f1a';
     ctx.moveTo(550, 550);
     ctx.lineTo(250, 550);
-    ctx.lineWidth = 7;
+    ctx.lineWidth = 15;
     ctx.stroke();
 }
 let ctx = canvas.getContext("2d");
-
-
-
-
 
 
 function dibujar(){
@@ -27,7 +23,7 @@ function dibujar(){
     let ctx = canvas.getContext("2d");
     ctx.beginPath();
     ctx.strokeStyle = '#8a5f1a';
-
+    ctx.lineWidth = 7;
     const xStickman = 420;
 
     switch(errors){
@@ -51,51 +47,51 @@ function dibujar(){
             ctx.lineWidth = 3;
             ctx.beginPath();
             ctx.strokeStyle = '#787878';
-            ctx.fillStyle = 'white';
+            ctx.fillStyle = 'wheat';
             ctx.arc(xStickman,190,40,0, 2*Math.PI);
             ctx.fill();
             ctx.stroke();
             break;
         case 5:
             //body
+            ctx.lineWidth = 3;
             ctx.strokeStyle = '#787878';
             ctx.beginPath();
             ctx.moveTo(xStickman,230);
             ctx.lineTo(xStickman,380);
             ctx.stroke();
-            ctx.lineWidth = 3;
             break;
         case 6:
             //right leg
+            ctx.lineWidth = 3;
             ctx.strokeStyle = '#787878';
             ctx.moveTo(xStickman,380);
             ctx.lineTo(xStickman + 50,450);
             ctx.stroke();
-            ctx.lineWidth = 3;
             break;
         case 7:
             //left leg
+            ctx.lineWidth = 3;
             ctx.strokeStyle = '#787878';
             ctx.moveTo(xStickman,380);
             ctx.lineTo(xStickman-50,450);
             ctx.stroke();
-            ctx.lineWidth = 3;
             break;
         case 8:
             //right arm
+            ctx.lineWidth = 3;
             ctx.strokeStyle = '#787878';
             ctx.moveTo(xStickman,280);
             ctx.lineTo(xStickman+50,320);
             ctx.stroke();
-            ctx.lineWidth = 3;
             break
         case 9:
             //left arm
+            ctx.lineWidth = 3;
             ctx.strokeStyle = '#787878';
             ctx.moveTo(xStickman,280);
             ctx.lineTo(xStickman-50,320);
             ctx.stroke();
-            ctx.lineWidth = 3;
             break;
     }
 

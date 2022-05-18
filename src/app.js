@@ -1,9 +1,11 @@
-console.log('Hello world');
+const menuPrincipal = document.querySelector('#menu');
 let counter = 0;
 let counterErrores = 0;
-
+let letrasUsadas = [];
 //funcion principal del juego
 function juegoDelAhorcado(){
+    const game = document.getElementById('game');
+    game.classList.remove('hidden');
     dibujarBase();
     counterErrores = 0;
 
@@ -11,8 +13,10 @@ function juegoDelAhorcado(){
 
     if(counter!=0){
         cleanBoard();
+        dibujarBase();
     }
-
+    createLista();
+    
     counter++;
     console.log(counter);
     //funcion que selecciona las palabras de manera aleatoria
@@ -38,14 +42,23 @@ function juegoDelAhorcado(){
         if(counter!=0){
             cleanBoard();
             counter = 0;
+            game.classList.add('hidden');
+            menuPrincipal.classList.remove('hidden');
         }
     });
     //
 }
 
+const btnJugar = document.querySelector('#play');
+const btnAgregarPalabra = document.querySelector('#add-palabra');
 const btnNuevoJuego = document.querySelector('#nuevo-juego');
 const btnTerminarJuego = document.querySelector('#terminar-juego');
 
-btnNuevoJuego.addEventListener('click', juegoDelAhorcado);
 
+
+btnNuevoJuego.addEventListener('click', juegoDelAhorcado);
+btnJugar.addEventListener('click',function(){
+    menuPrincipal.classList.add('hidden');
+    juegoDelAhorcado();
+});
 
