@@ -62,6 +62,10 @@ section{
     display: none;
 }
 
+.blur{
+    filter: blur(5px);
+}
+
 .letras-usadas{
     display: flex;
     flex-direction: row;
@@ -83,3 +87,17 @@ li{
     margin: 5px;
 }
 
+.ganaste{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 45%;
+}
+
+
+.perdiste{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 45%;
+}

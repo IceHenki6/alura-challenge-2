@@ -27,10 +27,13 @@ function cleanBoard(){
     let letras = document.querySelector('.display-letras');
     let board = document.querySelector('.canvas');
     let lista = document.querySelector('.letras-usadas');
+    const mensajeGanador = document.getElementById('ganaste');
     ctx = board.getContext('2d');
     ctx.clearRect(0,0,board.width, board.height);
     letras.remove();
     lista.remove();
     window.removeEventListener('keypress',captureLetras);
     letrasUsadas=[];
+    gameBoard.classList.remove('blur');
+    mensajeGanador.classList.add('hidden');
 }
