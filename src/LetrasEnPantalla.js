@@ -24,10 +24,11 @@ function letrasEnPantalla(word){
 }
 
 function cleanBoard(){
-    let letras = document.querySelector('.display-letras');
-    let lista = document.querySelector('.letras-usadas');
+    const letras = document.querySelector('.display-letras');
+    const lista = document.querySelector('.letras-usadas');
     const mensajeGanador = document.getElementById('ganaste');
     const jugadorPierde = document.getElementById('perdiste');
+    const ultimoDibujo = document.getElementById(counterErrores);
 
     letras.remove();
     lista.remove();
@@ -36,4 +37,10 @@ function cleanBoard(){
     letrasCorrectas=[];
     mensajeGanador.classList.add('hidden');
     jugadorPierde.classList.add('hidden');
+    gameBoard.classList.remove('blur');
+    ultimoDibujo.classList.add('hidden');
+
+    if (flagDibujo){
+        dibujo.classList.add('hidden');
+    }
 }

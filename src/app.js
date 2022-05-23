@@ -6,10 +6,9 @@ let letrasUsadas = [];
 let letrasCorrectas = [];
 //funcion principal del juego
 function juegoDelAhorcado(){
-
     const game = document.getElementById('game');
     game.classList.remove('hidden');
-    dibujarBase();
+    
     counterErrores = 0;
     counterCorrectas = 0;
     let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION'];
@@ -18,6 +17,7 @@ function juegoDelAhorcado(){
         cleanBoard();
         dibujarBase();
     }
+    dibujarBase();
     createLista();
     
     counter++;

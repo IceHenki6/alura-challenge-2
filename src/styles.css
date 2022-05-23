@@ -1,5 +1,5 @@
 body{
-    background-color: salmon;
+    background-color: orange;
 }
 
 main{
@@ -23,7 +23,8 @@ section{
     justify-content: center;
     width:50vw;
     height: 80vh;
-    background-color: wheat;
+    background-image: url(../images/cuaderno.png);
+    background-size: cover;
     border-radius: 30px;
 }
 
@@ -34,13 +35,13 @@ section{
 #dibujo{
     display: flex;
     justify-content: center;
-    width:800px;
+    width:40%;
     height:600px;
     margin: 10px auto;
 }
 
 #dibujo img{
-    width: 40%;
+    width: 95%;
     height:580px;
 }
 
@@ -104,4 +105,97 @@ li{
     display: flex;
     flex-direction: column;
     top: 45%;
+}
+
+/*Botones*/
+#play{
+    width: 328px;
+    height: 67px;
+    background: #0f52a4;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    border: 1px solid rgb(100, 100, 100);
+    box-sizing: border-box;
+
+    color: whitesmoke;
+
+    margin: 10px; 
+}
+
+#play:hover{
+    cursor: pointer;
+}
+
+#add-palabra{
+    width: 328px;
+    height: 67px;
+    background: #0f52a4;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    border: 1px solid rgb(100, 100, 100);
+    box-sizing: border-box;
+
+    color: orange;
+
+    margin: 10px;
+}
+
+#add-palabra:hover{
+    cursor: pointer;
+}
+
+.botones-juego{
+    display: flex;
+    justify-content: center;
+}
+#nuevo-juego{
+    width: 328px;
+    height: 67px;
+    background: #0f52a4;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    border: 1px solid rgb(100, 100, 100);
+    box-sizing: border-box;
+
+    color: orange;
+
+    margin: 10px;
+}
+
+#nuevo-juego:hover{
+    cursor: pointer;
+}
+
+#terminar-juego{
+    width: 328px;
+    height: 67px;
+    background: #0f52a4;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    border: 1px solid rgb(100, 100, 100);
+    box-sizing: border-box;
+
+    color: orange;
+
+    margin: 10px;
+}
+
+#terminar-juego:hover{
+    cursor: pointer;
 }
