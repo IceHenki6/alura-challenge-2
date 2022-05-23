@@ -28,12 +28,16 @@ function captureLetras(e) {
         });
     
         if (!existeLetra) {
-            if (counterErrores < 9) {
+            if (counterErrores < 8) {
                 dibujar();
                 letrasUsadas.push(letra);
                 ListaLetras(letra);
-            }else{
+            }
+            if(counterErrores === 8){
                 console.log('Perdiste!');
+                const jugadorPierde = document.getElementById('perdiste');
+                jugadorPierde.classList.remove('hidden');
+                gameBoard.classList.add('blur');
             }
             existeLetra = false;
         }
