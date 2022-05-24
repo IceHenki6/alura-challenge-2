@@ -2,7 +2,11 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Juego del Ahorcado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/reset.css">
     <link rel="stylesheet" href="src/styles.css">
   </head>
@@ -14,7 +18,13 @@
       <section id="menu">
         <button id="play">Jugar</button>
         <button id="add-palabra">Agregar Palabra</button>
+        <section id="agregar-palabra" class="hidden">
+          <label for="input-palabra"></label>
+          <input id="input-palabra" type="text">
+          <button id="btn-agregar">Agregar Palabra</button>
+        </section>
       </section>
+
       <section id="game" class="hidden">
         <div id="display-juego">
 
@@ -44,10 +54,12 @@
       <section id="ganaste" class="hidden">
         <h2>Ganaste!</h2>
         <h3>Presiona Nuevo Juego para iniciar otra partida o Salir para salir del juego</h3>
+        <h3>La palabra correcta es: </h3>
       </section>
       <section id="perdiste" class="hidden">
         <h2>Perdiste!</h2>
         <h3>Presiona Nuevo Juego para iniciar otra partida o Salir para salir del juego</h3>
+        <h3>La palabra correcta es: </h3>
       </section>
 
 
@@ -60,5 +72,6 @@
     <script src="src/CapturarLetras.js"></script>
     <script src="src/listaLetras.js"></script>
     <script src="src/MensajeGanador.js"></script>
+    <script src="src/AgregarPalabra.js"></script>
   </body>
 </html>

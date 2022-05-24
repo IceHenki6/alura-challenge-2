@@ -23,7 +23,7 @@ function captureLetras(e) {
                 counterCorrectas++;
                 letrasCorrectas.push(letra);
             }
-            JugadorGana(lgth);
+            JugadorGana(lgth,palabra);
             index++;
         });
     
@@ -35,9 +35,8 @@ function captureLetras(e) {
             }
             if(counterErrores === 8){
                 console.log('Perdiste!');
-                const jugadorPierde = document.getElementById('perdiste');
-                jugadorPierde.classList.remove('hidden');
-                gameBoard.classList.add('blur');
+                jugadorPierde(palabra);
+
             }
             existeLetra = false;
         }

@@ -1,17 +1,21 @@
 const menuPrincipal = document.querySelector('#menu');
+const logo = document.querySelector('header');
 let counter = 0;
 let counterErrores = 0;
 let counterCorrectas = 0;
 let letrasUsadas = [];
 let letrasCorrectas = [];
+let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION'];
+let palabra ='';
 //funcion principal del juego
 function juegoDelAhorcado(){
+    logo.classList.add('hidden');
     const game = document.getElementById('game');
     game.classList.remove('hidden');
     
     counterErrores = 0;
     counterCorrectas = 0;
-    let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION'];
+    
 
     if(counter!=0){
         cleanBoard();
@@ -24,7 +28,7 @@ function juegoDelAhorcado(){
     console.log(counter);
 
 
-    const palabra = seleccionarPalabra(palabras);
+    palabra = seleccionarPalabra(palabras);
 
 
     window.addEventListener('keypress', captureLetras);
@@ -38,6 +42,7 @@ function juegoDelAhorcado(){
             counter = 0;
             game.classList.add('hidden');
             menuPrincipal.classList.remove('hidden');
+            logo.classList.remove('hidden');
         }
     });
     //

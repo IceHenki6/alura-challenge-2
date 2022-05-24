@@ -1,5 +1,8 @@
 body{
+    display: flex;
+    justify-content: center;
     background-color: orange;
+    font-family: 'Grape Nuts', cursive;
 }
 
 main{
@@ -11,33 +14,79 @@ main{
     position: absolute;
     top: 40vh;
 }
+
+header{
+    position: absolute;
+    display: block;
+    margin: 10px auto;
+    color:#fff;
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+
+/*Input para agregar palabra*/
+#input-palabra{
+	padding-bottom: 1em;
+	width: 100%;
+	/* border: 1px solid #ccc; */
+	border: 2px solid #0f52a4;
+	padding: .7em;
+	width: 100%;
+	border-radius: 10px;
+}
+
+#btn-agregar{
+    padding: .5em 2em;
+	border: 0;
+	font-size: 1.2em;
+	cursor: pointer;
+	margin: 0;
+	margin-top: -3px;
+	color: #fff;
+	background-color:#0f52a4;
+	width: 100%;
+    display: block;
+    clear: both;
+    margin: 10px 10px;
+	border-radius: 20px;
+	box-shadow: 3px 3px 15px -5px #818181;
+}
+
+
+
 section{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
+#game{
+    position:absolute;
+    top: 5%;
+}
 #display-juego{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width:50vw;
-    height: 80vh;
+    height: 85vh;
     background-image: url(../images/cuaderno.png);
     background-size: cover;
     border-radius: 30px;
 }
 
 .hidden{
-    display: none;
+    display: none !important;
+    
 }
 
 #dibujo{
     display: flex;
     justify-content: center;
+    align-self: center;
     width:40%;
     height:600px;
-    margin: 10px auto;
+    margin: 10px
 }
 
 #dibujo img{
@@ -52,6 +101,8 @@ section{
     width: 30%;
     height: 5%;
     margin: 20px auto;
+    font-size: large;
+    font-weight: bolder;
 }
 
 .guion{
@@ -92,19 +143,61 @@ li{
     margin: 5px;
 }
 
-.ganaste{
+
+#ganaste{
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 45%;
+    padding: 30px;
+    top: 15%;
+    width: 45%;
+    height: 40%;
+    text-align: center;
+    color: #0f52a4;
+    background-image: url(../images/hojadepapel.png);
+    background-size:cover;
+    font-size: 50px;
 }
 
+#ganaste h2{
+    padding: 10px;
+}
 
-.perdiste{
+#ganaste h3{
+    margin-left:2%;
+    padding: 20px;
+    font-size: 30px
+}
+
+#palabra-correcta{
+    color: orange;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+#perdiste{
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 45%;
+    padding: 30px;
+    top: 15%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    color: #0f52a4;
+    background-image: url(../images/hojadepapel.png);
+    background-size: cover;
+    font-size: 50px;
+}
+
+#perdiste h2{
+    padding: 10px;
+}
+
+#perdiste h3{
+    margin-left:2%;
+    padding: 20px;
+    font-size: 30px
 }
 
 /*Botones*/
