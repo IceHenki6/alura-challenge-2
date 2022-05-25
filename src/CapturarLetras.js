@@ -23,10 +23,14 @@ function captureLetras(e) {
                 counterCorrectas++;
                 letrasCorrectas.push(letra);
             }
-            JugadorGana(lgth,palabra);
+            // if(counterCorrectas==lgth){
+            //     JugadorGana(palabra);
+            // }
             index++;
         });
-    
+        if(counterCorrectas==lgth){
+            JugadorGana(palabra);
+        }
         if (!existeLetra) {
             if (counterErrores < 8) {
                 dibujar();

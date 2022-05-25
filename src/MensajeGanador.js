@@ -2,15 +2,14 @@ const mensajeGanador = document.querySelector('#ganaste');
 mensajeGanador.classList.add('hidden');
 
 
-function JugadorGana(lgth, word){
-    if(counterCorrectas === lgth){
-        gameBoard.classList.add('blur');
-        mensajeGanador.classList.remove('hidden');
-        const txtPalabraCorrecta = document.createElement('h3');
-        txtPalabraCorrecta.id = 'palabra-correcta';
-        txtPalabraCorrecta.textContent = word;
-        mensajeGanador.appendChild(txtPalabraCorrecta);
-    }
+function JugadorGana(word){
+    gameBoard.classList.add('blur');
+    mensajeGanador.classList.remove('hidden');
+    const txtPalabraCorrecta = document.createElement('h3');
+    txtPalabraCorrecta.id = 'palabra-correcta';
+    txtPalabraCorrecta.textContent = word;
+    mensajeGanador.appendChild(txtPalabraCorrecta);
+
 }
 
 function jugadorPierde(word){
