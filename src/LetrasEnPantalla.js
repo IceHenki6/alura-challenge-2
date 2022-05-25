@@ -36,12 +36,16 @@ function cleanBoard(){
     letrasUsadas=[];
     letrasCorrectas=[];
 
-    const txtWord = document.querySelector('#palabra-correcta');
+    if(finDelJuego){
+        const txtWord = document.querySelector('#palabra-correcta');
+        txtWord.remove();
+    }
+
     mensajeGanador.classList.add('hidden');
     jugadorPierde.classList.add('hidden');
     gameBoard.classList.remove('blur');
     ultimoDibujo.classList.add('hidden');
-    txtWord.remove();
+    
 
     if (flagDibujo){
         dibujo.classList.add('hidden');

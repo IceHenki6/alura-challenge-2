@@ -1,6 +1,6 @@
 const mensajeGanador = document.querySelector('#ganaste');
 mensajeGanador.classList.add('hidden');
-
+let finDelJuego = false;
 
 function JugadorGana(word){
     gameBoard.classList.add('blur');
@@ -9,6 +9,7 @@ function JugadorGana(word){
     txtPalabraCorrecta.id = 'palabra-correcta';
     txtPalabraCorrecta.textContent = word;
     mensajeGanador.appendChild(txtPalabraCorrecta);
+    finDelJuego=true;
 
 }
 
@@ -20,4 +21,5 @@ function jugadorPierde(word){
     txtPalabraCorrecta.id = 'palabra-correcta';
     txtPalabraCorrecta.textContent = word;
     jugadorPierde.appendChild(txtPalabraCorrecta);
+    finDelJuego = true;
 }
