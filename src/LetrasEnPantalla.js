@@ -33,6 +33,10 @@ function cleanBoard(){
     letras.remove();
     lista.remove();
     window.removeEventListener('keypress',captureLetras);
+    if(existeTeclado){
+        const tecladoVirtual = document.querySelector('#container-teclado');
+        tecladoVirtual.removeEventListener('click',CaptureEKeyboard);
+    }
     letrasUsadas=[];
     letrasCorrectas=[];
 
@@ -46,7 +50,6 @@ function cleanBoard(){
     jugadorPierde.classList.add('hidden');
     gameBoard.classList.remove('blur');
     ultimoDibujo.classList.add('hidden');
-    
 
     if (flagDibujo){
         dibujo.classList.add('hidden');

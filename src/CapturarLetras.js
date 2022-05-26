@@ -3,6 +3,16 @@ const gameBoard = document.querySelector('#display-juego');
 function captureLetras(e) {
     const letraInput = e.key;
     const letra = letraInput.toUpperCase();
+    ProcesarLetra(letra);
+}
+
+function CaptureEKeyboard(event){
+    let keyPress = event.target.textContent;
+    console.log(keyPress);
+    ProcesarLetra(keyPress);
+}
+
+function ProcesarLetra(letra){
     if((!letrasCorrectas.includes(letra))&&(!letrasUsadas.includes(letra)) && (/[a-zA-Z]/).test(letra)){
         let existeLetra = false;
 

@@ -7,12 +7,21 @@ let letrasUsadas = [];
 let letrasCorrectas = [];
 let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION'];
 let palabra ='';
+
+
 //funcion principal del juego
 function juegoDelAhorcado(){
     logo.classList.add('hidden');
     const game = document.getElementById('game');
     game.classList.remove('hidden');
     
+    if(existeTeclado){
+        const keyboard = document.getElementById('container-teclado');
+        keyboard.classList.remove('ocultar-teclado');
+        keyboard.classList.add('mostrar-teclado');
+    }
+
+
     counterErrores = 0;
     counterCorrectas = 0;
     
@@ -30,10 +39,14 @@ function juegoDelAhorcado(){
 
     palabra = seleccionarPalabra(palabras);
 
-
+    //Event listeners de pulsaciones de telcado o clicks en teclado virtual;
     window.addEventListener('keypress', captureLetras);
-    
 
+    if(existeTeclado){
+        const containerTeclado = document.querySelector('#container-teclado');
+        containerTeclado.addEventListener('click', CaptureEKeyboard);
+    }
+    
 
     //sale del juego si el usuario presiona 'Terminar Juego'
     btnTerminarJuego.addEventListener('click', function(){
@@ -43,6 +56,7 @@ function juegoDelAhorcado(){
             game.classList.add('hidden');
             menuPrincipal.classList.remove('hidden');
             logo.classList.remove('hidden');
+            EsconderTeclado();
         }
     });
     //
