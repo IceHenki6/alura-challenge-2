@@ -9,11 +9,11 @@ function dibujarBase(){
     dibujo = arrDibujo[0];
     dibujo.classList.remove('hidden');
 }
-function dibujar(){
+function dibujar(errors){
 
     flagDibujo = true;
-    counterErrores++;
-    errors = counterErrores; 
+    // counterErrores++;
+    // errors = counterErrores; 
     switch(errors){
         case 1:
             dibujo.classList.add('hidden');

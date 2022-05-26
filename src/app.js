@@ -53,7 +53,6 @@ function juegoDelAhorcado(){
 function seleccionarPalabra(arrPalabras) {
     const randPalabra = arrPalabras[Math.floor(Math.random() * arrPalabras.length)];
 
-    console.log(randPalabra);
     // const longitud = randPalabra.length;
 
     letrasEnPantalla(randPalabra);

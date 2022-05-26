@@ -7,16 +7,26 @@ function menuPalabra(){
     btnAgregarPalabra.classList.add('hidden');
 }
 function AgregarPalabra(){
-    console.log(palabras);
     let newPalabra = inputPalabra.value;
-    if((!palabras.includes(newPalabra.toUpperCase())) && (/[a-zA-Z]/).test(newPalabra)&&(newPalabra!='')){
+    if((!palabras.includes(newPalabra.toUpperCase())) && (/[a-zA-Z]/).test(newPalabra)&&(newPalabra!='')&&(newPalabra.length<50)){
         palabras.push(newPalabra.toUpperCase());
-        console.log(palabras);
         menuAgregarPalabra.classList.add('hidden');
         btnJugar.classList.remove('hidden');
         btnAgregarPalabra.classList.remove('hidden');
     }
-
+    else if(palabras.includes(newPalabra.toUpperCase())){
+        const msg1 = document.getElementById('verificar-existe-palabra');
+        MostrarMensaje(msg1);
+    }
+    else if(!((/[a-zA-Z]/).test(newPalabra))){
+        const msg2 = document.getElementById('verificar-input');
+        MostrarMensaje(msg2);
+    }
+    else{
+        const msg3 = document.getElementById('verificar-input-length')
+        MostrarMensaje(msg3);
+    }
+    inputPalabra.value = '';
 }
 
 btnAgregar.addEventListener('click',AgregarPalabra);

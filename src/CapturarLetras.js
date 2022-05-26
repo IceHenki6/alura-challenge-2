@@ -3,10 +3,8 @@ const gameBoard = document.querySelector('#display-juego');
 function captureLetras(e) {
     const letraInput = e.key;
     const letra = letraInput.toUpperCase();
-    console.log((/[a-zA-Z]/).test(letra))
     if((!letrasCorrectas.includes(letra))&&(!letrasUsadas.includes(letra)) && (/[a-zA-Z]/).test(letra)){
         let existeLetra = false;
-        console.log(letra);
 
         arrLetras = document.querySelectorAll('.letra');
         let lgth = arrLetras.length;
@@ -33,7 +31,8 @@ function captureLetras(e) {
         }
         if (!existeLetra) {
             if (counterErrores < 8) {
-                dibujar();
+                counterErrores++;
+                dibujar(counterErrores);
                 letrasUsadas.push(letra);
                 ListaLetras(letra);
             }
@@ -46,6 +45,8 @@ function captureLetras(e) {
         }
     }
     else{
+        const msj = document.querySelector('#letra-ya-usada');
         console.log('Ya usaste esta letra');
+        MostrarMensaje(msj);
     }
 }

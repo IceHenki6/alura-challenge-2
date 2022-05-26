@@ -39,6 +39,7 @@ function cleanBoard(){
     if(finDelJuego){
         const txtWord = document.querySelector('#palabra-correcta');
         txtWord.remove();
+        finDelJuego = false;
     }
 
     mensajeGanador.classList.add('hidden');
