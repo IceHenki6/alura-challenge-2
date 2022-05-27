@@ -1,4 +1,6 @@
 //recibe las letras del usuario y las compara con la de la palabra seleccionada
+
+//recibe la pulsacion de teclado y ejecuta la funcion procesar letra
 const gameBoard = document.querySelector('#display-juego');
 function captureLetras(e) {
     const letraInput = e.key;
@@ -6,14 +8,17 @@ function captureLetras(e) {
     ProcesarLetra(letra);
 }
 
+//recibe la letra presionada en el teclado virtual y ejecuta procesar letra
 function CaptureEKeyboard(event){
     let keyPress = event.target.textContent;
     console.log(keyPress);
     ProcesarLetra(keyPress);
 }
 
+
+//realiza la comparación de las letras presionadas por el usuarios con las de la palbras
 function ProcesarLetra(letra){
-    if((!letrasCorrectas.includes(letra))&&(!letrasUsadas.includes(letra)) && (/[a-zA-Z]/).test(letra)){
+    if((!letrasCorrectas.includes(letra))&&(!letrasUsadas.includes(letra)) && (/[a-zA-Z]/).test(letra)&&!finDelJuego){
         let existeLetra = false;
 
         arrLetras = document.querySelectorAll('.letra');
@@ -23,7 +28,6 @@ function ProcesarLetra(letra){
         arrLetras.forEach(element => {
             let guiones = document.querySelectorAll('.guion');
             if (element.textContent === letra) {
-                // element.classList.remove('guion');
                 element.classList.remove('hidden');
                 let guion = guiones[index];
                 guion.classList.add('hidden');
@@ -31,9 +35,6 @@ function ProcesarLetra(letra){
                 counterCorrectas++;
                 letrasCorrectas.push(letra);
             }
-            // if(counterCorrectas==lgth){
-            //     JugadorGana(palabra);
-            // }
             index++;
         });
         if(counterCorrectas==lgth){
@@ -49,10 +50,12 @@ function ProcesarLetra(letra){
             if(counterErrores === 8){
                 console.log('Perdiste!');
                 jugadorPierde(palabra);
-
             }
             existeLetra = false;
         }
+    }
+    else if(finDelJuego){
+        console.log('fin del juego!')
     }
     else{
         const msj = document.querySelector('#letra-ya-usada');

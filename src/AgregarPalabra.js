@@ -1,6 +1,7 @@
 const inputPalabra = document.getElementById('input-palabra');
 const menuAgregarPalabra = document.querySelector('#agregar-palabra');
 const btnAgregar = document.getElementById('btn-agregar');
+let palabraAgregada = false;
 function menuPalabra(){
     menuAgregarPalabra.classList.remove('hidden');
     btnJugar.classList.add('hidden');
@@ -13,6 +14,9 @@ function AgregarPalabra(){
         menuAgregarPalabra.classList.add('hidden');
         btnJugar.classList.remove('hidden');
         btnAgregarPalabra.classList.remove('hidden');
+        palabraAgregada = true;
+        const msgAgregada = document.getElementById('palabra-agregada');
+        MostrarMensaje(msgAgregada);
     }
     else if(palabras.includes(newPalabra.toUpperCase())){
         const msg1 = document.getElementById('verificar-existe-palabra');

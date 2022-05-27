@@ -1,11 +1,15 @@
+//inicio del programa principal del juego del ahorcado
+//Seleccionar el menu principal y el logo
 const menuPrincipal = document.querySelector('#menu');
 const logo = document.querySelector('header');
+
+//inicializar los contadores principales del juego
 let counter = 0;
 let counterErrores = 0;
 let counterCorrectas = 0;
 let letrasUsadas = [];
 let letrasCorrectas = [];
-let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION'];
+let palabras = ['LIBERTAD', 'SEMPITERNO','COMPUTADORA','SISTEMA','SOFTWARE','PROGRAMACION','HERRAMIENTA','AUTO','INGENIERIA','ESTUDIAR','DEDICACION','ORACLE','IMAGINACION','MATEMATICAS','MECANICA','PROCESADOR','LIBRO','UNIVERSIDAD','AVION'];
 let palabra ='';
 
 
@@ -15,6 +19,7 @@ function juegoDelAhorcado(){
     const game = document.getElementById('game');
     game.classList.remove('hidden');
     
+    //si se encuentra en un dispositivo mobile o tablet, se crea un teclado virtual
     if(existeTeclado){
         const keyboard = document.getElementById('container-teclado');
         keyboard.classList.remove('ocultar-teclado');
@@ -36,8 +41,17 @@ function juegoDelAhorcado(){
     counter++;
     console.log(counter);
 
-
-    palabra = seleccionarPalabra(palabras);
+    //si el usuario agrega manualmente una palabra, será la palabra asignada para el primer juego
+    //sino se selecciona aleatoriamente una palabra
+    if(palabraAgregada){
+        palabra = palabras[palabras.length-1];
+        console.log(palabra);
+        letrasEnPantalla(palabra);
+        palabraAgregada = false;
+    }
+    else{
+        palabra = seleccionarPalabra(palabras);
+    }
 
     //Event listeners de pulsaciones de telcado o clicks en teclado virtual;
     window.addEventListener('keypress', captureLetras);
