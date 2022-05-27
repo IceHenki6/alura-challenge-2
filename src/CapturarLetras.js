@@ -18,7 +18,7 @@ function CaptureEKeyboard(event){
 
 //realiza la comparación de las letras presionadas por el usuarios con las de la palbras
 function ProcesarLetra(letra){
-    if((!letrasCorrectas.includes(letra))&&(!letrasUsadas.includes(letra)) && (/[a-zA-Z]/).test(letra)&&!finDelJuego){
+    if((!letrasCorrectas.includes(letra))&&(!letrasUsadas.includes(letra)) && (/[a-zA-Z\u00d1]/).test(letra)&&!finDelJuego){
         let existeLetra = false;
 
         arrLetras = document.querySelectorAll('.letra');

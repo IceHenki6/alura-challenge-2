@@ -1,4 +1,4 @@
-
+//coloca las imagenes del dibujo del stickman en pantalla
 const containerDibujo = document.querySelector('#dibujo');
 const arrDibujo = document.querySelectorAll('.img-dibujo');
 let flagDibujo = false;

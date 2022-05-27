@@ -17,13 +17,13 @@ main{
 
 header{
     position: absolute;
-    display: block;
-    margin: 10px auto;
+    top: 5%;
     color:#fff;
     font-size: 80px;
     font-weight: bolder;
     text-align: center;
 }
+
 
 
 /*Input para agregar palabra*/
@@ -37,6 +37,8 @@ header{
 	border-radius: 10px;
 }
 
+
+/* boton para agregar palabra */
 #btn-agregar{
     padding: .5em 2em;
 	border: 0;
@@ -53,9 +55,11 @@ header{
 	border-radius: 20px;
 	box-shadow: 3px 3px 15px -5px #818181;
 }
+/* fin boton agregar palabra */
 
 
 
+/* seccion principal del juego */
 section{
     display: flex;
     flex-direction: column;
@@ -148,6 +152,7 @@ li{
 }
 
 
+/* mensaje si el usuario gana */
 #ganaste{
     position: absolute;
     display: flex;
@@ -179,6 +184,8 @@ li{
     font-weight: bolder;
 }
 
+
+/* mensaje si el usuario pierde */
 #perdiste{
     position: absolute;
     display: flex;
@@ -208,6 +215,11 @@ li{
 button{
     color: rgb(255, 203, 106);
     font-weight: bolder;
+    box-shadow: 3px 3px 15px -5px #484848;
+}
+
+button:hover{
+    box-shadow: 3px 3px 15px -5px #323232;
 }
 
 #play{
@@ -383,6 +395,7 @@ button{
     height:3vh;
     width: 6vw;
     margin:5px;
+    box-shadow: 3px 3px 15px -5px #484848;
 }
 
 .key p{
@@ -525,7 +538,7 @@ button{
 footer{
     position: absolute;
     bottom: 1%;
-    left: 5%;
+    left: 2%;
     color: #fff;
 }
 footer p{
