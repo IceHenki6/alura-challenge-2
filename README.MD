@@ -1,4 +1,7 @@
-#Proyecto Juego del Ahorcado del programa Oracle Next Education
+Proyecto Juego del Ahorcado del programa Oracle Next Education
+
+El juego se trata de adivinar las letras de una palabra, la cual es elegida aleatoriamente o agregada por el usuario. Cada vez que el usuario ingresa una letra incorrecta, se dibuja una parte de la horca y pierde un intento. Cuando la horca es dibujada en su totalidad el jugador pierde. El jugador gana cuando completa la palabra correcta antes de que terminen sus intentos.
+
 
 **Requisitos:**
 - Debe funcionar solo con letras mayúsculas;
